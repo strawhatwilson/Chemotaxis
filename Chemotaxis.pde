@@ -1,7 +1,8 @@
- //declare bacteria variables here   
+Bacteria aLot;
+
  void setup()   
  {     
- 	//initialize bacteria variables here   
+ 	size (700,700);   
  }   
  void draw()   
  {    
