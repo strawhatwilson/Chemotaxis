@@ -5,22 +5,31 @@ int y = 0;
  void setup()   
  {     
  	size (700,700);
- 	background (0);
- 	shinos = new Bacteria [10];
+ 	//background ((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+ 	shinos = new Bacteria [100];
  	for (int i = 0; i < shinos.length; i++)
  	{
  		shinos[i] = new Bacteria();
  	}
  	   
  }   
+ 
  void draw()   
  {    
+ 	int bgColor = color ((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255),1);
+ 	fill(bgColor);
+ 	stroke(bgColor);
+ 	rect(0,0,700,700);
  	for (int i = 0; i < shinos.length; i++)
  	{
  		shinos[i].show();
  		shinos[i].move();
  	}
  }  
+ void mousePressed()
+ {
+ 	redraw();
+ }
  class Bacteria    
  {     
  	int bacX, bacY, bacColors;
@@ -39,6 +48,18 @@ int y = 0;
  	void move()
  	{
 
- 	 	x++;
+ 	 	if (bacX > mouseX){
+ 			bacX = bacX - (int)(Math.random()*2);
+ 		}
+ 		if (bacX < mouseX){
+ 			bacX = bacX + (int)(Math.random()*2);
+ 		}
+ 		
+ 		if (bacY > mouseY){
+ 			bacY = bacY - (int)(Math.random()*2);
+ 		}
+ 		if (bacY < mouseY) {
+ 			bacY = bacY + (int)(Math.random()*2);
+ 		}
  	}
  }     	
