@@ -5,7 +5,6 @@ int y = 0;
  void setup()   
  {     
  	size (700,700);
- 	//background ((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
  	shinos = new Bacteria [100];
  	for (int i = 0; i < shinos.length; i++)
  	{
@@ -26,10 +25,6 @@ int y = 0;
  		shinos[i].move();
  	}
  }  
- void mousePressed()
- {
- 	redraw();
- }
  class Bacteria    
  {     
  	int bacX, bacY, bacColors;
@@ -49,17 +44,17 @@ int y = 0;
  	{
 
  	 	if (bacX > mouseX){
- 			bacX = bacX - (int)(Math.random()*2);
+ 			bacX = bacX - (int)(Math.random()*5);
  		}
  		if (bacX < mouseX){
- 			bacX = bacX + (int)(Math.random()*2);
+ 			bacX = bacX + (int)(Math.random()*5);
  		}
  		
  		if (bacY > mouseY){
- 			bacY = bacY - (int)(Math.random()*2);
+ 			bacY = bacY - (int)(Math.random()*5);
  		}
  		if (bacY < mouseY) {
- 			bacY = bacY + (int)(Math.random()*2);
+ 			bacY = bacY + (int)(Math.random()*5);
  		}
  	}
  }     	
